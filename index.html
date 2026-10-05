@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LicitaList Assessoria | Assessoria em Licitações Públicas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0A192F',
+              navy: '#112240',
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              accent: '#00B4D8',
+              card: '#1D3557'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-bg {
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 50%, #AA771C 100%);
+    }
+    .glass-card {
+      background: rgba(17, 34, 64, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-brand-navy border-b border-brand-gold/10 py-2 text-xs text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <span><i class="fas fa-map-marker-alt text-brand-gold mr-1"></i> Recife - PE</span>
+        <span><i class="fas fa-envelope text-brand-gold mr-1"></i> contato@licitalist.com</span>
+      </div>
+      <div>
+        <a href="https://wa.me/5581999291766" target="_blank" class="hover:text-brand-gold transition-colors font-semibold"><i class="fab fa-whatsapp text-brand-gold mr-1"></i> (81) 99929-1766</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 w-full z-50 glass-card border-b border-brand-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center text-brand-dark font-black text-xl shadow-lg">
+            LL
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black tracking-wider text-white">Licita<span class="gold-gradient">List</span></span>
+            <span class="text-[10px] tracking-widest uppercase text-brand-gold font-semibold">Assessoria em Licitações</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#servicos" class="hover:text-brand-gold transition-colors">Serviços</a>
+          <a href="#localizacao" class="hover:text-brand-gold transition-colors">Atuação</a>
+          <a href="#calculadora" class="hover:text-brand-gold transition-colors">Calculadora</a>
+          <a href="#fale-conosco" class="hover:text-brand-gold transition-colors">Fale Conosco</a>
+          <a href="#faq" class="hover:text-brand-gold transition-colors">Dúvidas</a>
+        </nav>
+
+        <!-- CTA Button Header -->
+        <a href="https://wa.me/5581999291766?text=Olá,%20gostaria%20de%20uma%20consultoria%20sobre%20licitações." target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-5 py-2.5 rounded-full gold-bg text-brand-dark font-bold hover:brightness-110 transition-all shadow-lg hover:shadow-brand-gold/20">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-2xl text-brand-gold focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden glass-card border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+      <a href="#servicos" class="block py-2 text-slate-200 hover:text-brand-gold">Serviços</a>
+      <a href="#localizacao" class="block py-2 text-slate-200 hover:text-brand-gold">Atuação</a>
+      <a href="#calculadora" class="block py-2 text-slate-200 hover:text-brand-gold">Calculadora</a>
+      <a href="#fale-conosco" class="block py-2 text-slate-200 hover:text-brand-gold">Fale Conosco</a>
+      <a href="#faq" class="block py-2 text-slate-200 hover:text-brand-gold">Dúvidas</a>
+      <a href="https://wa.me/5581999291766?text=Olá,%20gostaria%20de%20uma%20consultoria%20sobre%20licitações." target="_blank" class="w-full flex items-center justify-center space-x-2 py-3 rounded-xl gold-bg text-brand-dark font-bold">
+        <i class="fab fa-whatsapp text-lg"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-20 md:pt-28 md:pb-32 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-navy via-brand-dark to-brand-dark opacity-80"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+          <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-navy border border-brand-gold/30 text-brand-gold text-xs sm:text-sm font-semibold">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sede em Recife / PE — Atendimento em todo o Brasil</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+            Sua empresa pronta para <span class="gold-gradient">vender mais</span> ao Governo
+          </h1>
+
+          <p class="text-slate-300 text-lg sm:text-xl max-w-2xl leading-relaxed">
+            Descomplicamos o mercado de compras públicas. Gestão completa de editais, verificação rigorosa de documentos e elaboração técnica de minutas para sua empresa vencer licitações com segurança.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            <a href="https://wa.me/5581999291766?text=Olá,%20quero%20analisar%20as%20oportunidades%20para%20minha%20empresa." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-bg text-brand-dark text-lg font-black hover:brightness-110 transition-all shadow-xl hover:shadow-brand-gold/30 flex items-center justify-center space-x-3">
+              <i class="fab fa-whatsapp text-2xl"></i>
+              <span>Atendimento via WhatsApp</span>
+            </a>
+            <a href="#fale-conosco" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-brand-gold/40 text-slate-200 hover:bg-brand-navy hover:text-brand-gold transition-all flex items-center justify-center space-x-2 font-semibold">
+              <i class="fas fa-envelope"></i>
+              <span>Enviar Mensagem</span>
+            </a>
+          </div>
+
+          <div class="pt-8 border-t border-slate-800 grid grid-cols-3 gap-4 text-center md:text-left">
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold gold-gradient">Lei 14.133</p>
+              <p class="text-xs text-slate-400 mt-1">Conformidade total</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold gold-gradient">100% Nacional</p>
+              <p class="text-xs text-slate-400 mt-1">Atuação em todo o país</p>
+            </div>
+            <div>
+              <p class="text-xl sm:text-2xl font-bold gold-gradient">(81) 99929-1766</p>
+              <p class="text-xs text-slate-400 mt-1">Atendimento direto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5">
+          <div class="glass-card rounded-2xl p-6 sm:p-8 relative shadow-2xl">
+            <div class="flex items-center space-x-4 mb-6 pb-6 border-b border-slate-700/50">
+              <div class="w-14 h-14 rounded-xl gold-bg flex items-center justify-center text-brand-dark text-2xl font-black">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-white">LicitaList Assessoria</h3>
+                <p class="text-xs text-brand-gold font-medium">Gestão e Eficiência em Compras Públicas</p>
+              </div>
+            </div>
+
+            <ul class="space-y-4 text-sm text-slate-300">
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-check-circle text-brand-gold mt-1"></i>
+                <span>Análise minuciosa de Editais e Termos de Referência.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-check-circle text-brand-gold mt-1"></i>
+                <span>Checklist rigoroso de documentação para habilitação sem falhas.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-check-circle text-brand-gold mt-1"></i>
+                <span>Elaboração de minutas de Recursos e Impugnações prontas para uso.</span>
+              </li>
+            </ul>
+
+            <div class="mt-8 p-4 rounded-xl bg-brand-navy/80 border border-brand-gold/20 text-center space-y-1">
+              <p class="text-xs text-slate-400">Localização & Contato:</p>
+              <p class="text-sm font-bold text-white"><i class="fas fa-map-pin text-brand-gold mr-1"></i> Recife - Pernambuco</p>
+              <p class="text-xs text-brand-gold"><i class="fas fa-envelope mr-1"></i> contato@licitalist.com</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-20 bg-brand-navy/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Soluções Estratégicas</h2>
+        <h3 class="text-3xl sm:text-4xl font-black text-white">Como Ajudamos Sua Empresa a Vencer</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-gold/50 transition-all">
+          <div class="w-14 h-14 rounded-xl gold-bg text-brand-dark flex items-center justify-center text-2xl font-bold mb-6">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Mapeamento de Editais</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Identificamos oportunidades ideais para o seu nicho de mercado e filtramos editais com maior taxa de sucesso.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-gold/50 transition-all">
+          <div class="w-14 h-14 rounded-xl gold-bg text-brand-dark flex items-center justify-center text-2xl font-bold mb-6">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Habilitação e Documentos</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Organizamos e validamos toda a documentação jurídica, fiscal e técnica para evitar inabilitações formais.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-gold/50 transition-all">
+          <div class="w-14 h-14 rounded-xl gold-bg text-brand-dark flex items-center justify-center text-2xl font-bold mb-6">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Minutas de Recursos</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Elaboramos minutas técnicas de impugnações e recursos prontas para serem protocoladas pelo seu advogado/setor jurídico.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALCULADORA DE VIABILIDADE -->
+  <section id="calculadora" class="py-20 bg-brand-dark relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="px-4 py-1.5 rounded-full gold-bg text-brand-dark font-black text-xs uppercase tracking-widest">Ferramenta Interativa</span>
+        <h3 class="text-3xl font-black text-white mt-4">Calculadora de Viabilidade para Licitar</h3>
+        <p class="text-slate-400 text-sm mt-2">Responda às 3 perguntas abaixo e descubra se sua empresa está pronta para disputar contratos governamentais.</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 sm:p-10 border-2 border-brand-gold/40 shadow-2xl">
+        <form id="calcForm" class="space-y-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-200 mb-2">1. Qual o tempo de fundação do seu CNPJ?</label>
+            <select id="q1" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-brand-gold focus:outline-none">
+              <option value="1">Menos de 6 meses</option>
+              <option value="2">Entre 6 meses e 2 anos</option>
+              <option value="3">Mais de 2 anos</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-slate-200 mb-2">2. Suas certidões fiscais (Federal, Estadual, Municipal e FGTS) estão regulares?</label>
+            <select id="q2" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-brand-gold focus:outline-none">
+              <option value="3">Sim, todas 100% em dia</option>
+              <option value="1">Possuo pendências fiscais</option>
+              <option value="2">Não sei informar com precisão</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-slate-200 mb-2">3. Possui atestados de capacidade técnica de fornecimentos anteriores?</label>
+            <select id="q3" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-brand-gold focus:outline-none">
+              <option value="3">Sim, fornecidos por clientes privados ou públicos</option>
+              <option value="1">Ainda não possuo atestados</option>
+            </select>
+          </div>
+
+          <button type="button" onclick="calcularViabilidade()" class="w-full py-4 rounded-xl gold-bg text-brand-dark font-black text-lg hover:brightness-110 transition-all shadow-lg">
+            <i class="fas fa-calculator mr-2"></i>Calcular Diagnóstico
+          </button>
+        </form>
+
+        <div id="resultadoCalc" class="hidden mt-8 p-6 rounded-xl bg-brand-navy border border-brand-gold/60 text-center">
+          <h4 id="resTitulo" class="text-2xl font-black text-brand-gold mb-2"></h4>
+          <p id="resDesc" class="text-sm text-slate-300 mb-6"></p>
+          <a id="resBtn" href="https://wa.me/5581999291766?text=Fiz%20a%20simulação%20da%20calculadora%20no%20site%20e%20gostaria%20de%20orientação." target="_blank" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl gold-bg text-brand-dark font-bold">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>Receber Análise Completa no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALE CONOSCO (FORMULÁRIO DE CONTATO E INFORMAÇÕES) -->
+  <section id="fale-conosco" class="py-20 bg-brand-navy/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Atendimento Direto</h2>
+        <h3 class="text-3xl sm:text-4xl font-black text-white">Fale Conosco</h3>
+        <p class="text-slate-400 mt-2 text-sm">Envie uma mensagem direta para nossa equipe técnica ou utilize nossos canais de atendimento imediato.</p>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Formulário de Mensagem -->
+        <div class="md:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border border-brand-gold/30">
+          <h4 class="text-xl font-bold text-white mb-6"><i class="fas fa-paper-plane text-brand-gold mr-2"></i>Envie uma Mensagem</h4>
+          
+          <form id="contactForm" onsubmit="enviarMensagem(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Nome Completo</label>
+              <input type="text" id="nome" required placeholder="Seu nome ou da sua empresa" class="w-full bg-brand-dark border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-brand-gold focus:outline-none">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">E-mail de Contato</label>
+                <input type="email" id="email" required placeholder="seu@email.com" class="w-full bg-brand-dark border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-brand-gold focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" required placeholder="(81) 99999-9999" class="w-full bg-brand-dark border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-brand-gold focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Como podemos ajudar?</label>
+              <textarea id="mensagem" rows="4" required placeholder="Descreva brevemente sua dúvida ou necessidade com licitações..." class="w-full bg-brand-dark border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-brand-gold focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl gold-bg text-brand-dark font-black text-base hover:brightness-110 transition-all shadow-lg flex items-center justify-center space-x-2">
+              <i class="fas fa-envelope"></i>
+              <span>Enviar Mensagem Agora</span>
+            </button>
+          </form>
+
+          <div id="msgSucesso" class="hidden mt-4 p-4 rounded-xl bg-emerald-900/50 border border-emerald-500/50 text-emerald-200 text-xs text-center">
+            <i class="fas fa-check-circle mr-1"></i> Mensagem enviada! Entraremos em contato em breve pelo seu e-mail ou WhatsApp.
+          </div>
+        </div>
+
+        <!-- Cards de Contato Direto -->
+        <div class="md:col-span-5 space-y-6">
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <h4 class="text-lg font-bold text-white border-b border-slate-700 pb-3">Canais Oficiais</h4>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg gold-bg text-brand-dark flex items-center justify-center font-bold text-lg">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">E-mail Corporativo</p>
+                <a href="mailto:contato@licitalist.com" class="text-sm font-bold text-brand-gold hover:underline">contato@licitalist.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg gold-bg text-brand-dark flex items-center justify-center font-bold text-lg">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">WhatsApp / Telefone</p>
+                <a href="https://wa.me/5581999291766" target="_blank" class="text-sm font-bold text-brand-gold hover:underline">(81) 99929-1766</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg gold-bg text-brand-dark flex items-center justify-center font-bold text-lg">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">Sede Administrativa</p>
+                <p class="text-sm font-bold text-white">Recife - Pernambuco</p>
+                <p class="text-xs text-slate-400">Atendimento presencial com agendamento & remoto para todo o Brasil.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-brand-navy p-6 rounded-2xl border border-brand-gold/30 text-center">
+            <p class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-1">Horário de Atendimento</p>
+            <p class="text-sm text-slate-200">Segunda a Sexta, das 08h às 18h</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-brand-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Dúvidas Frequentes</h2>
+        <h3 class="text-3xl font-black text-white">Perguntas Frequentes</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-card rounded-xl p-6 border border-slate-800">
+          <h4 class="font-bold text-lg text-white mb-2">A LicitaList atua em processos jurídicos no Judiciário?</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Não. A LicitaList é uma empresa de assessoria técnica e administrativa em licitações. No caso de recursos ou impugnações administrativas, nós <strong>elaboramos as minutas técnicas</strong> completas para que o departamento jurídico interno ou advogado contratado da sua empresa possa fazer a revisão e o protocolo formal perante os órgãos competentes.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 border border-slate-800">
+          <h4 class="font-bold text-lg text-white mb-2">Como funciona o atendimento fora de Recife/PE?</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Como a maioria dos processos licitatórios atualmente são eletrônicos, prestamos assessoria completa a distância para empresas de qualquer estado do Brasil com a mesma eficiência.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark border-t border-slate-800 py-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded gold-bg flex items-center justify-center text-brand-dark font-black text-sm">
+          LL
+        </div>
+        <span class="font-bold text-white tracking-wider">LicitaList Assessoria</span>
+      </div>
+
+      <div class="text-center md:text-left text-xs space-y-1">
+        <p>Recife - Pernambuco | Atuação Nacional</p>
+        <p>WhatsApp: (81) 99929-1766 | E-mail: <a href="mailto:contato@licitalist.com" class="text-brand-gold hover:underline">contato@licitalist.com</a></p>
+      </div>
+
+      <p class="text-xs text-slate-500">
+        &copy; LicitaList Assessoria. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/5581999291766?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Script JS -->
+  <script>
+    // Toggle Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Calculadora de Viabilidade
+    function calcularViabilidade() {
+      const q1 = parseInt(document.getElementById('q1').value);
+      const q2 = parseInt(document.getElementById('q2').value);
+      const q3 = parseInt(document.getElementById('q3').value);
+      
+      const total = q1 + q2 + q3;
+      const resContainer = document.getElementById('resultadoCalc');
+      const resTitulo = document.getElementById('resTitulo');
+      const resDesc = document.getElementById('resDesc');
+
+      resContainer.classList.remove('hidden');
+
+      if (total >= 7) {
+        resTitulo.innerText = "Altamente Preparado!";
+        resDesc.innerText = "Sua empresa preenche os requisitos essenciais para entrar em licitações imediatamente e disputar contratos lucrativos com o Governo.";
+      } else if (total >= 4) {
+        resTitulo.innerText = "Nível Intermediário — Requer Ajustes";
+        resDesc.innerText = "Sua empresa tem bom potencial, mas precisa organizar certas certidões ou documentações técnicas para evitar inabilitações.";
+      } else {
+        resTitulo.innerText = "Fase de Estruturação Inicial";
+        resDesc.innerText = "Recomendamos uma consultoria inicial para organizar a documentação da sua empresa antes de disputar os primeiros editais.";
+      }
+    }
+
+    // Formulário de Contato
+    function enviarMensagem(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      // Exibe mensagem de confirmação
+      document.getElementById('msgSucesso').classList.remove('hidden');
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
